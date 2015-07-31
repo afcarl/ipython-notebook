@@ -14,13 +14,16 @@ ENV SHELL /bin/bash
 ENV USER jupyter
 ENV PATH /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 
-WORKDIR /home/jupyter/
+#WORKDIR /home/jupyter/
 
 # You can mount your own SSL certs as necessary here
 ENV PEM_FILE /home/jupyter/key.pem
 
 # $PASSWORD will get `unset` within notebook.sh, turned into an IPython style hash
 ENV PASSWORD DontKeepTheDefault
+
+VOLUME /home/dmitri/volumes/notebooks
+WORKDIR /home/dmitri/volumes/notebooks
 
 EXPOSE 8888
 
